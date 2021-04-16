@@ -17,7 +17,7 @@ class DataBloc extends Bloc<DataEvent, DataState> {
     DataEvent event,
   ) async* {
     if (event is GetUsers) {
-      yield DataLoading();
+      // yield DataLoading();
 
       final usersList = await MongoDatabase.getDocuments();
 
@@ -25,32 +25,32 @@ class DataBloc extends Bloc<DataEvent, DataState> {
         yield DataFailure(error: 'Something went wrong, try again.');
       }
 
-      List<User> users;
+      List<User> users = [];
       for (final u in usersList) {
         users.add(User.fromMap(u));
       }
-
+      print('yield loaded');
       yield DataLoaded(userList: users);
     }
     if (event is AddUser) {
       yield DataLoading();
 
       await MongoDatabase.insert(event.user);
-
+      print('yield initial');
       yield DataInitial();
     }
     if (event is UpdateUser) {
       yield DataLoading();
 
       await MongoDatabase.update(event.user);
-
+      print('yield initial');
       yield DataInitial();
     }
     if (event is DeleteUser) {
       yield DataLoading();
 
       await MongoDatabase.delete(event.user);
-
+      print('yield initial');
       yield DataInitial();
     }
   }

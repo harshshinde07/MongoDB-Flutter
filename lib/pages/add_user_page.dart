@@ -50,6 +50,7 @@ class _AddUserPageState extends State<AddUserPage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
+                    keyboardType: TextInputType.phone,
                     controller: phoneController,
                     decoration: InputDecoration(labelText: 'Phone'),
                   ),
@@ -57,6 +58,7 @@ class _AddUserPageState extends State<AddUserPage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
+                    keyboardType: TextInputType.number,
                     controller: ageController,
                     decoration: InputDecoration(labelText: 'Age'),
                   ),
