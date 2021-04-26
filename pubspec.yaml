@@ -23,12 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bloc: ^6.1.0
   cupertino_icons: ^1.0.1
-  equatable: ^1.2.5
-  flutter_bloc: ^6.1.1
   mongo_dart: ^0.4.4
-  riverpod: ^0.12.2
 
 dev_dependencies:
   flutter_test:
