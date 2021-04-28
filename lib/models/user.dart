@@ -1,9 +1,6 @@
-import 'package:equatable/equatable.dart';
 import 'package:mongo_dart/mongo_dart.dart';
-import 'package:mongodb_flutter/database/database.dart';
-import 'package:riverpod/riverpod.dart';
 
-class User extends Equatable {
+class User {
   final ObjectId id;
   final String name;
   final int age;
@@ -25,7 +22,4 @@ class User extends Equatable {
         id = map['_id'],
         age = map['age'],
         phone = map['phone'];
-
-  @override
-  List<Object> get props => [id, name, age, phone];
 }
